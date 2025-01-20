@@ -1,0 +1,229 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 40px;
+    background: linear-gradient(to right, #4caf50, #2e7d32); /* Modern green gradient */
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.header-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin:  auto;
+}
+
+.header-side h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.header-side .location-email {
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #e8f5e9; /* Slightly lighter green for contrast */
+}
+
+.home-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.home-link:hover {
+    color: #a5d6a7;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    gap: 15px;
+}
+
+.button-container a {
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    padding: 12px 30px;
+    border-radius: 50px; /* Smooth pill-shaped buttons */
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.button-container a:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #66bb6a, #388e3c); /* Lighter green on hover */
+    transform: translateY(-2px) scale(1.08); /* Slight upward lift and zoom effect */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Ripple Effect */
+.button-container a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.button-container a:hover::after {
+    width: 250%;
+    height: 250%;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Optional: Active Button Effect */
+.button-container a:active {
+    transform: scale(0.98); /* Subtle shrink on click */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Container */
+.container {
+    padding-top: 120px; /* Add padding equal to header height */
+}
+
+.all_cards {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Section Cards */
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 10px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    color: #2e7d32; /* Matches the header */
+    border-bottom: 2px solid #4caf50; /* Subtle highlight */
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    padding-left: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    color: #555;
+}
+
+.card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #4caf50;
+    border-radius: 50%;
+}
+
+/* Footer */
+.footer {
+    background: #2e7d32;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Links */
+a {
+    color: #4caf50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2e7d32;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .header-side {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+}

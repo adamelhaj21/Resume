@@ -1,0 +1,218 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.home-link:hover {
+    color: #ff6b6b;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Only hide horizontal overflow */
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; /* Ensure it stays centered */
+}
+
+
+/* Portfolio Section Styling */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Project Grid to make cards side by side */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number here to control how many cards per row */
+    gap: 20px;
+    justify-content: center; /* Center the content horizontally */
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .project-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row for mobile */
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+}
+
+/* Project card style */
+.project-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit color so it doesn’t look like a normal link */
+    display: block;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Use min-height to ensure content stretches */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    position: relative;
+    background: linear-gradient(135deg, #ff6b6b, #44688f); /* Gradient background */
+    background-size: 200% 200%;
+    animation: gradientBackground 15s ease infinite; /* Background animation */
+    overflow-x: hidden; /* Only disable horizontal overflow */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+}
+
+/* Back Home Button */
+.back-home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.back-home-btn:hover {
+    background-color: #1abc9c;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.back-home-btn:active {
+    transform: scale(0.95); /* Slight press effect on click */
+}
+
+/* Background Animation */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-content {
+    text-align: center;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency to see the floating text */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating Text */
+.floating-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 50px; /* Adjusted to a smaller size */
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1); /* Light and subtle color */
+    white-space: nowrap;
+    transform: translate(0, 0);
+    z-index: 1; /* Behind content */
+    pointer-events: none; /* Prevent mouse interaction */
+    animation: randomFloat 30s ease-in-out infinite; /* Randomized floating animation */
+}
+
+/* Floating Animation with random pattern */
+@keyframes randomFloat {
+    0% {
+        transform: translate(0vw, 0vh); /* Top-left */
+    }
+    15% {
+        transform: translate(50vw, 20vh); /* Random position */
+    }
+    30% {
+        transform: translate(20vw, 60vh); /* Another random position */
+    }
+    45% {
+        transform: translate(80vw, 30vh); /* Moving to a new random position */
+    }
+    60% {
+        transform: translate(30vw, 80vh); /* Another random position */
+    }
+    75% {
+        transform: translate(70vw, 40vh); /* Continue with random movement */
+    }
+    90% {
+        transform: translate(10vw, 10vh); /* Close to the start but random */
+    }
+    100% {
+        transform: translate(0vw, 0vh); /* Back to the start (Top-left) */
+    }
+}

@@ -1,0 +1,201 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure it takes the full viewport height */
+    background-color: #3475be; /* Fallback color if image is not loaded */
+    background-image: 
+        linear-gradient(rgba(145, 52, 52, 0.6), rgba(0, 0, 0, 0.6)), /* Gradient overlay */
+        url('your-background-image.jpg'); /* Replace with your actual image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Keep the background centered */
+    background-attachment: fixed; /* Background stays fixed when scrolling */
+    position: relative; /* Allow positioning of the decorative shapes */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Add a soft shadow to the entire background area */
+    padding: 20px; /* Ensure some padding on smaller screens */
+}
+
+/* Contact Form Container */
+.contact-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form Title */
+.contact-form h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Input Field Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #26a100;
+    color: #f4f4f9;
+    transform: scale(1.1);
+}
+
+/* Back Button */
+.back-btn {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.back-btn:hover {
+    background-color: #000000;
+    color: #f4f4f9;
+    transform: scale(1.1);
+}
+
+/* Success/Error Message */
+.form-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Success Message Styling */
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Error Message Styling */
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+/* Success/Error Message */
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Start hidden */
+}
+
+/* Success Message Styling */
+#result.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Error Message Styling */
+#result.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    body {
+        height: auto; /* Adjust height for mobile devices */
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+        max-width: 100%; /* Make form take full width on mobile */
+    }
+
+    .contact-form h3 {
+        font-size: 1.5rem; /* Smaller font size for titles */
+    }
+
+    .form-group label {
+        font-size: 0.9rem; /* Slightly smaller label font size */
+    }
+
+    .submit-btn, .back-btn {
+        padding: 8px 15px; /* Reduce button padding */
+        font-size: 0.9rem; /* Smaller button font size */
+    }
+
+    .submit-btn, .back-btn {
+        width: 100%; /* Ensure buttons take full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens like phones */
+    .contact-form {
+        padding: 15px;
+    }
+
+    .submit-btn, .back-btn {
+        font-size: 0.8rem;
+        padding: 7px 10px; /* Further reduce button padding */
+    }
+
+    .form-group input, .form-group textarea {
+        font-size: 0.9rem; /* Make input text smaller on mobile */
+    }
+
+    .contact-form h3 {
+        font-size: 1.3rem; /* Smaller title font for phones */
+    }
+}
